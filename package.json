@@ -1,7 +1,7 @@
 {
-  "name": "@huequica/native_extentions",
+  "name": "@huequica/native_extensions",
   "version": "0.0.1",
-  "description": "huequica's original native extention tools",
+  "description": "huequica's original native extension tools",
   "main": "index.js",
   "repository": "git@github.com:huequica/node_nativeExtention.git",
   "author": "huequica<dev@huequica.xyz>",
