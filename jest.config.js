@@ -1,8 +1,8 @@
 /** @type {import ('ts-jest/dist/types').InitialOptionsTsJest} */
 module.exports = {
-  preset: 'ts-jest',
-  testEnvironment: 'node',
-	global: {
+	preset: 'ts-jest',
+	testEnvironment: 'node',
+	globals: {
 
 		jest: {
 			moduleFileExtensions: ['ts', 'js'],
@@ -16,7 +16,11 @@ module.exports = {
 			},
 			testMatch: [
 				'**/tests/**/*.test.ts'
-			]
+			],
 		}
+	},
+	moduleNameMapper: {
+		"^~/(.+)$": "<rootDir>/src/$1"
 	}
+
 };
