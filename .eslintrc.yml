@@ -1,0 +1,49 @@
+env:
+  browser: true
+  es2021: true
+extends:
+  - 'eslint:recommended'
+  - 'plugin:@typescript-eslint/recommended'
+parser: '@typescript-eslint/parser'
+parserOptions:
+  ecmaVersion: 12
+  sourceType: module
+plugins:
+  - '@typescript-eslint'
+
+rules:
+  # `var`を使ったら怒るよ
+  no-var: error
+
+  # セミコロン抜かないで
+  semi: error
+
+  # `==` とかを使わないでね
+  eqeqeq: error
+
+  # カンマのあとはスペースを入れてくれ
+  comma-spacing: error
+
+  # インデントは2で守ってね
+  indent:
+    - error
+    - tab
+
+  # `console.log`は消しておいて
+  no-console: error
+
+  # ブロック演算子はスペース入れてね
+  block-spacing: error
+
+  # 演算子の前後のスペースは絶対抜かないで
+  space-infix-ops: error
+
+  # アロー演算子前後のスペース強制
+  arrow-spacing: error
+
+  # タブとスペースを混ぜないで
+  no-mixed-spaces-and-tabs: error
+
+
+  '@typescript-eslint/no-unused-vars': off
+  '@typescript-eslint/no-explicit-any': off
