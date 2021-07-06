@@ -24,6 +24,8 @@ $ yarn add @huequica/native_extensions
 ```ts
 import '@huequica/native_extensions';
 import sample from './sample';
+
+sample();
 ```
 
 ## sample.ts
