@@ -1,0 +1,6 @@
+.prettierrc
+tsconfig.json
+.eslintrc.yml
+test/
+src/
+.circleci/
