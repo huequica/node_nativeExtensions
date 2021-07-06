@@ -21,6 +21,7 @@
   },
   "scripts": {
     "test": "jest",
+    "test:ci": "jest -i --ci --runInBand",
     "format": "prettier --write src/",
     "lint": "eslint src/ --ext ts",
     "lint:fix": "npm run format && npm run lint --fix",
