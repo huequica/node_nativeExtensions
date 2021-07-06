@@ -22,5 +22,20 @@ module.exports = {
 	},
 	moduleNameMapper: {
 		"^~/(.+)$": "<rootDir>/src/$1"
-	}
+	},
+
+	reporters: [
+		'default',
+		[
+			'jest-junit',
+			{
+				suiteName: 'jest tests',
+				outputDirectory: '/tmp/test-reports/jest',
+				outputName: 'results.xml',
+				classNameTemplate: '{classname}-{title}',
+				titleTemplate: '{classname}-{title}',
+				ancestorSeparator:' >>> '
+			}
+		]
+	]
 };
