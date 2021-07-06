@@ -1,6 +1,7 @@
 # node_nativeExtensions
 
 [![CircleCI](https://circleci.com/gh/huequica/node_nativeExtensions/tree/master.svg?style=svg&circle-token=a98467058b075fbddb53cdb139a65bbfcabed87e)](https://circleci.com/gh/huequica/node_nativeExtensions/tree/master)
+![NPM](https://img.shields.io/npm/l/@huequica/native_extensions?style=flat-square)
 
 # Summary
 
