@@ -1,4 +1,7 @@
 .prettierrc
+.prettierignore
+jest.config.js
+.editorconfig
 tsconfig.json
 .eslintrc.yml
 test/
