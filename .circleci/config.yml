@@ -1,0 +1,88 @@
+version: 2.1
+
+defaults: &defaults
+  working_directory: ~/nativeExtensions
+  docker:
+    - image: cimg/node:14.16.1
+
+
+jobs:
+  setup:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - yarn-packages-{{ .Branch }}-{{checksum "yarn.lock"}}
+
+      - run:
+          name: install packages
+          command: yarn --frozen-lockfile
+
+      - save_cache:
+          key: yarn-packages-{{ .Branch }}-{{checksum "yarn.lock"}}
+          paths:
+            - ~/.npm
+
+      - persist_to_workspace:
+          root: .
+          paths:
+            - ./
+
+  build:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: .
+
+      - run:
+          name: transpile ts to js
+          command: yarn build
+
+      - persist_to_workspace:
+          root: .
+          paths:
+            - ./
+
+  lint:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: .
+
+      - run:
+          name: lint ts files
+          command: yarn lint --format junit --output-file /tmp/test-reports/eslint/results.xml
+
+      - store_test_results:
+          path: /tmp/test-reports/eslint/
+
+  test:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: .
+
+      - run:
+          name: run tests
+          command: yarn test:ci
+
+      - store_test_results:
+          path: /tmp/test-reports/jest/
+
+
+workflows:
+  main:
+    jobs:
+      - setup
+      - build:
+          requires:
+            - setup
+            
+      # build が通らなければそもそも実行されない
+      - lint:
+          requires:
+            - build
+      - test:
+          requires:
+            - build
