@@ -2,6 +2,7 @@
 module.exports = {
 	preset: 'ts-jest',
 	testEnvironment: 'node',
+	testPathIgnorePatterns: ["<rootDir>/dist/"],
 	globals: {
 
 		jest: {
@@ -22,5 +23,4 @@ module.exports = {
 	moduleNameMapper: {
 		"^~/(.+)$": "<rootDir>/src/$1"
 	}
-
 };
