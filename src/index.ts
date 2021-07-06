@@ -1,3 +1,3 @@
-import './extensions/array'
+import './extensions/array';
 
 export default {};
