@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "huequica's original native extension tools",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "repository": "https://github.com/huequica/node_nativeExtensions",
   "author": "huequica<dev@huequica.xyz>",
   "license": "MIT",
