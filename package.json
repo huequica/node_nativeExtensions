@@ -1,6 +1,6 @@
 {
   "name": "@huequica/native_extensions",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "huequica's original native extension tools",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
