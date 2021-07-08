@@ -88,6 +88,7 @@ jobs:
               npm publish
             else
               echo "Now module is not publishable."
+            fi
 
 workflows:
   main:
