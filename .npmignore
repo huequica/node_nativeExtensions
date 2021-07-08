@@ -4,6 +4,6 @@ jest.config.js
 .editorconfig
 tsconfig.json
 .eslintrc.yml
-test/
+tests/
 src/
 .circleci/
