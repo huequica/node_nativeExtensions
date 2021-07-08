@@ -70,6 +70,24 @@ jobs:
       - store_test_results:
           path: /tmp/test-reports/jest/
 
+  publish:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: publishable checker install
+          command: npm i -g can-npm-publish
+      - run:
+          name: Authentication via accesstoken
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_AUTH_TOKEN" > ./.npmrc
+      - run:
+          name: Publishing
+          command: |
+            if can-npm-publish; then
+              npm publish
+            else
+              echo "Now module is not publishable."
 
 workflows:
   main:
@@ -79,10 +97,23 @@ workflows:
           requires:
             - setup
             
-      # build が通らなければそもそも実行されない
       - lint:
           requires:
             - build
       - test:
           requires:
             - build
+
+  deploy:
+    jobs:
+      - setup:
+          filters:
+            branches:
+              only: master
+
+      - publish:
+          requires:
+            - setup
+          filters:
+            tags:
+              only: /^v.*/

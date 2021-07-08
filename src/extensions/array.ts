@@ -2,9 +2,9 @@ export {};
 
 declare global {
 	interface Array<T> {
-		/** 配列の最後であるかを返す
-		 *
-		 * @param checkItem 検証したいオブジェクト
+		/** Return equality what reciever's last item and param
+		 * @param {any} checkItem checking item
+		 * @returns {boolean}
 		 */
 		lastItemIs(checkItem: any): boolean;
 	}

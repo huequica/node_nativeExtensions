@@ -1,8 +1,9 @@
 {
   "name": "@huequica/native_extensions",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "huequica's original native extension tools",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "repository": "https://github.com/huequica/node_nativeExtensions",
   "author": "huequica<dev@huequica.xyz>",
   "license": "MIT",
@@ -20,6 +21,7 @@
     "typescript": "^4.3.5"
   },
   "scripts": {
+    "prepublish": "rm -rf dist && npm run build",
     "test": "jest",
     "test:ci": "jest -i --ci --runInBand",
     "format": "prettier --write src/",
