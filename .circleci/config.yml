@@ -92,7 +92,11 @@ jobs:
 workflows:
   main:
     jobs:
-      - setup
+      - setup:
+          filters:
+            branches:
+              ignore:
+                - master
       - build:
           requires:
             - setup
