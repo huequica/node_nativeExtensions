@@ -21,7 +21,7 @@
     "typescript": "^4.3.5"
   },
   "scripts": {
-    "prepublish": "rm -rf dist && npm run build",
+    "prepublishOnly": "rm -rf dist && npm run build",
     "test": "jest",
     "test:ci": "jest -i --ci --runInBand",
     "format": "prettier --write src/",

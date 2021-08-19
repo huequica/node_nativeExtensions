@@ -3,7 +3,10 @@
 jest.config.js
 .editorconfig
 tsconfig.json
+base.tsconfig.json
 .eslintrc.yml
 tests/
 src/
 .circleci/
+.vscode/
+.github/
