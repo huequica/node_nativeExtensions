@@ -1,20 +1,4 @@
 {
-  "compilerOptions": {
-    "target": "ES2018",
-    "module": "commonjs",
-    "sourceMap": true,
-    "baseUrl": "./",
-    "outDir": "./dist",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "declaration": true,
-    "paths": {
-      "~/*": ["src/*"]
-    }
-  },
-  "include": [
-    "src/**/*"
-  ]
+  "extends": "./base.tsconfig.json",
+  "include": ["src/**/*", "tests/**/*"]
 }
