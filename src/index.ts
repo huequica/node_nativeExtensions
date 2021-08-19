@@ -1,3 +1,3 @@
 import './extensions/array';
-
-export default {};
+import * as singleFunctions from './extensions/singleFunctions';
+export {singleFunctions};
